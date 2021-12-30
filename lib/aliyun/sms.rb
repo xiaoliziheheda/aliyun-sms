@@ -102,7 +102,7 @@ module Aliyun
 
       # 生成短信唯一标识码，采用到微秒的时间戳
       def seed_signature_nonce
-        Time.now.utc.strftime("%Y%m%d%H%M%S%L")
+        "#{Time.now.utc.strftime("%Y%m%d%H%M%S%L")}_#{rand(10_000..99_999)}"
       end
 
       # 测试参数未编码时生成的字符串是否正确（多一道保险）
